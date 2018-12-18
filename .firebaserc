@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "firechatapp": "testfirebaseapp-726ec",
+    "RemortService": "chat-88b83",
+    "default": "chat-88b83"
+  },
+  "targets": {
+    "chat-88b83": {
+      "hosting": {
+        "chat": [
+          "chat-88b83"
+        ]
+      }
+    }
+  }
+}

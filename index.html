@@ -1,0 +1,728 @@
+<!doctype html>
+<!--
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Learn how to use the Firebase platform on the Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+  <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+  <title>Friendly Chat</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Friendly Chat">
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Friendly Chat">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
+
+  <!-- Tile icon for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <meta name="msapplication-navbutton-color" content="#303F9F">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <!-- App Styling -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <!-- Header section containing logo -->
+  <!-- <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <h3><i class="material-icons">chat_bubble_outline</i> Quick Chat</h3>
+      </div>
+      <div id="user-container">
+        <div hidden id="user-pic"></div>
+        <div hidden id="user-name"></div>
+        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Sign-out
+        </button>
+        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+      </div>
+    </div>
+  </header> -->
+
+
+</div>
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div  style="width: 256px;" class="logo">
+					<img src="images/logo.png" alt="">
+					<span style="font-size: 12px">SUPPORT(REACT,BLOCK CHAIN,ANGULAR, DEVOPPS)</span>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a href="#">home</a></li>
+						<li class="main_nav_item"><a href="about.html">about us</a></li>
+						<li class="main_nav_item"><a href="courses.html">courses</a></li>
+						<li class="main_nav_item"><a href="contact.html">contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<img src="images/phone-call.svg" alt="">
+			<span>+91-8447396480</span>
+      <div id="user-container">
+        <div hidden id="user-pic"></div>
+        <div hidden id="user-name"></div>
+        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Sign-out
+        </button>
+        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+      </div>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<ul class="menu_list menu_mm">
+					<li class="menu_item menu_mm"><a href="#">Home</a></li>
+					<li class="menu_item menu_mm"><a href="about.html">About us</a></li>
+					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
+
+					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+				</ul>
+
+				<!-- Menu Social -->
+
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+
+		<!-- Hero Slider -->
+		<div class="hero_slider_container">
+			<div class="hero_slider owl-carousel">
+
+				<!-- Hero Slide -->
+				<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Support</span> today!</h1>
+						</div>
+					</div>
+				</div>
+
+				<!-- Hero Slide -->
+				<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Support</span> today!</h1>
+						</div>
+					</div>
+				</div>
+
+				<!-- Hero Slide -->
+				<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Support</span> today!</h1>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
+			<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
+		</div>
+
+	</div>
+
+	<div class="hero_boxes">
+		<div class="hero_boxes_inner">
+			<div class="container">
+				<div class="row">
+				<div class="col-lg-2">&nbsp;</div>
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/earth-globe.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Online Supports</h2>
+								<a href="courses.html" class="hero_box_link">view more</a>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/professor.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Our Professionals</h2>
+								<a href="teachers.html" class="hero_box_link">view more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Popular Support</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row course_boxes">
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">Beginners guide to UI</a></div>
+							<div class="card-text">HTML,CSS,JAVASCRIPT,JQUERY etc...</div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+							</div>
+							<div class="course_author_name">Anil</div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$150</span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="images/course_3.jpg" alt="https://unsplash.com/@dsmacinnes">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">ANGULAR/REACT</a></div>
+							<div class="card-text">React js,Angular,Meteor etc...</div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+							</div>
+							<div class="course_author_name">Anil</div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$500</span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Popular Course Item -->
+				<div class="col-lg-4 course_box">
+					<div class="card">
+						<img class="card-img-top" src="images/course_4.jpg" alt="https://unsplash.com/@kellitungay">
+						<div class="card-body text-center">
+							<div class="card-title"><a href="courses.html">A complete guide to Blockchain</a></div>
+							<div class="card-text">Ethereum,Hyperledger etc...</div>
+						</div>
+						<div class="price_box d-flex flex-row align-items-center">
+							<div class="course_author_image">
+								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+							</div>
+							<div class="course_author_name">Anil</div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$1500</span></div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Register -->
+
+	<div class="register">
+
+		<div class="container-fluid">
+
+			<div class="row row-eq-height">
+				<div class="col-lg-6 nopadding">
+
+					<!-- Register -->
+
+					<div class="register_section d-flex flex-column align-items-center justify-content-center">
+						<div class="register_content text-center">
+							<h1 class="register_title">Connect Now</h1>
+							<p class="register_text"> WE PROFESSIONAL WORKED WITH WORLD LARGEST COMPANIES ORGANIZATION</p>
+							<div class="button button_1 register_button mx-auto trans_200"><a href="#">Chat now</a></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 nopadding">
+
+					<!-- Search -->
+
+					<div class="search_section d-flex flex-column align-items-center justify-content-center">
+						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+						<div class="search_content text-center">
+							<h1 class="search_title">Search for your course</h1>
+							<form id="search_form" class="search_form" action="post">
+								<input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Name" required="required" data-error="Course name is required.">
+								<input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Category">
+								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Degree">
+								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">search course</button>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Services -->
+
+	<div class="services page_section">
+
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Our Services</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row services_row">
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="images/earth-globe.svg" alt="">
+					</div>
+					<h3>Online Support</h3>
+					<p>More than 50 Project experience in Various Technologies </p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="images/exam.svg" alt="">
+					</div>
+					<h3> Online Traning </h3>
+					<p>Corporate Traning experience with IBM, WIPRO, ZENSAR ETC</p>
+				</div>
+
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="images/professor.svg" alt="">
+					</div>
+					<h3>Exceptional Professional</h3>
+					<p> Professional Worked with World Largest Companies  </p>
+				</div>
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Testimonials -->
+
+	<div class="testimonials page_section">
+		<!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
+		<div class="testimonials_background_container prlx_parent">
+			<div class="testimonials_background prlx" style="background-image:url(images/testimonials_background.jpg)"></div>
+		</div>
+		<div class="container">
+
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>What our client say</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+
+					<div class="testimonials_slider_container">
+
+						<!-- Testimonials Slider -->
+						<div class="owl-carousel owl-theme testimonials_slider">
+
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text"></p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">james cooper</div>
+										<div class="testimonial_title">IBM Employee</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">Dlip</div>
+										<div class="testimonial_title">Graduate Student</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">james cooper</div>
+										<div class="testimonial_title">Graduate Student</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	<div class="events page_section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Upcoming Events</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="event_items">
+
+				<!-- Event Item -->
+				<div class="row event_item">
+					<div class="col">
+						<div class="row d-flex flex-row align-items-end">
+
+							<div class="col-lg-2 order-lg-1 order-2">
+								<div class="event_date d-flex flex-column align-items-center justify-content-center">
+									<div class="event_day">07</div>
+									<div class="event_month">January</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 order-lg-2 order-3">
+								<div class="event_content">
+									<div class="event_name"><a class="trans_200" href="#">DOCKER</a></div>
+									<div class="event_location">Grand Central Park</div>
+									<p>Docker</p>
+								</div>
+							</div>
+
+							<div class="col-lg-4 order-lg-3 order-1">
+								<div class="event_image">
+									<img src="images/event_1.jpg" alt="https://unsplash.com/@theunsteady5">
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+  <div>
+    <div id="messages-card-container" class="mdl-cell mdl-cell--12-col mdl-grid">
+
+      <!-- Messages container -->
+      <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <div id="messages">
+            <span id="message-filler"></span>
+          </div>
+          <form id="message-form" action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="message">
+              <label class="mdl-textfield__label" for="message">Message...</label>
+            </div>
+            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+              Send
+            </button>
+          </form>
+          <form id="image-form" action="#">
+            <input id="mediaCapture" type="file" accept="image/*,capture=camera">
+            <button id="submitImage" title="Add an image" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--amber-400 mdl-color-text--white">
+              <i class="material-icons">image</i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+
+    </div>
+  </div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+
+			<!-- Newsletter -->
+
+			<div class="newsletter">
+				<div class="row">
+					<div class="col">
+						<div class="section_title text-center">
+							<h1>Subscribe to newsletter</h1>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col text-center">
+						<div class="newsletter_form_container mx-auto">
+							<form action="post">
+								<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
+									<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
+									<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+<!-- Footer Content -->
+
+			<div class="footer_content">
+				<div class="row">
+
+					<!-- Footer Column - About -->
+					<div class="col-lg-3 footer_col">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<img src="images/logo.png" alt="">
+								<span>course</span>
+							</div>
+						</div>
+
+						<p class="footer_about_text">HTML.CSS,BLOCKCHAIN</p>
+
+					</div>
+
+					<!-- Footer Column - Menu -->
+
+					<div class="col-lg-3 footer_col">
+						<div class="footer_column_title">Menu</div>
+						<div class="footer_column_content">
+							<ul>
+								<li class="footer_list_item"><a href="index.html">Home</a></li>
+								<li class="footer_list_item"><a href="about.html">About Us</a></li>
+								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
+								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+
+
+					<!-- Footer Column - Contact -->
+
+					<div class="col-lg-3 footer_col">
+						<div class="footer_column_title">Contact</div>
+						<div class="footer_column_content">
+							<ul>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									bangalore
+								</li>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									8447396480
+								</li>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>aftechiphone@gmail.com
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Footer Copyright -->
+
+			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+				<div class="footer_copyright">
+					<span>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </span>
+				</div>
+				<div class="footer_social ml-sm-auto">
+					<ul class="menu_social">
+						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+</div>
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+<script>
+  // Initialize Firebase  AIzaSyAP-iMXdjuBiJAtul2RIx5tKDte3f3W5Fc
+  // google-site-verification=4e9DokiDnol1ZJD95mwfZlRBgSG2c5UGn0IvUyB7ZQA
+  var config = {
+    apiKey: "rtWQ0MHt6CG8YA",
+    authDomain: "https://chat-88b83.firebaseapp.com",
+    databaseURL: "https://chat-88b83.firebaseapp.com",
+    storageBucket: "testfirebaseapp-726ec.appspot.com",
+    messagingSenderId: "15554518246"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript">
+var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
+{widgetcode:"efad904394c66aba0b75383a36e7b62acc9fc78dfe93994d17add6549cb2ca73e0b7aff466ab0aedb268a4460e4c35db", values:{},ready:function(){}};
+var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
