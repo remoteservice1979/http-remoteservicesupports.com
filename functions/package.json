@@ -6,7 +6,8 @@
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "simplewebrtc": "^3.0.1",
   },
   "dependencies": {
     "firebase-admin": "~6.0.0",
